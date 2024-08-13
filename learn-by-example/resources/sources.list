@@ -1,0 +1,10 @@
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy main restricted
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-updates main restricted
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy universe
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-updates universe
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-updates multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-security main restricted
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-security universe
+deb http://mirrors.huaweicloud.com/repository/ubuntu/ jammy-security multiverse

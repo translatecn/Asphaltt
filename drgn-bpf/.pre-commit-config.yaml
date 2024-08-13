@@ -1,0 +1,42 @@
+exclude: ^contrib/
+repos:
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    -   id: isort
+        name: isort (python)
+-   repo: https://github.com/psf/black
+    rev: 23.11.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+    -   id: mypy
+        args: [--show-error-codes, --strict, --no-warn-return-any, --no-warn-unused-ignores]
+        files: ^(drgn/.*\.py|_drgn.pyi|tools/.*\.py)$
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: trailing-whitespace
+        exclude_types: [diff]
+    -   id: end-of-file-fixer
+        exclude_types: [diff]
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: debug-statements
+    -   id: check-merge-conflict
+-   repo: https://github.com/netromdk/vermin
+    rev: v1.6.0
+    hooks:
+    -   id: vermin
+        # The vmtest package in general should adhere to the same version
+        # requirements as drgn, with the following exceptions: The manage &
+        # kbuild scripts are used by Github Actions and need not be broadly
+        # compatible.
+        exclude: "^vmtest/(manage|kbuild).py$"
+        args: ['-t=3.6-', '--violations', '--eval-annotations']

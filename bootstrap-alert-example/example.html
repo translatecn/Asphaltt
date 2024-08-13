@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Bootstrap Alert Example</title>  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    </header>
+    <body>
+        <div class="container" style="position: fixed; left: 40%; top: 50%; text-align:center">
+            <div class="row" style="width: 20%; text-align: center;">
+                <div id="alertSuccess" class="alert alert-success" style="opacity: 0; display: none;">
+                    <strong>
+                        Beautiful!
+                    </strong>
+                </div>
+                <div id="alertWarning" class="alert alert-warning" style="opacity: 0; display: none;">
+                    <strong>
+                        Failed to do.
+                    </strong>
+                </div>
+                <div id="alertInfo" class="alert alert-info" style="opacity: 0; display: none;">
+                    <strong>
+                        Something wrong!
+                    </strong>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="margin-top: 5%">
+                <button class="btn btn-success" onclick="alertSuccess()">Succeed</button>
+            </div>
+            <div class="row" style="margin-top: 5%">
+                <button class="btn btn-warning" onclick="alertWarning()">Warn</button>
+            </div>
+            <div class="row" style="margin-top: 5%">
+                    <button class="btn btn-info" onclick="alertInfo()">Inform</button>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+    </body>
+    <script type="text/javascript">
+    function _alert(info, msg) {
+        if (msg !== undefined || msg !== "") {
+            $("#alert"+info).find("strong").text(msg);
+        }
+        $("#alert"+info).attr("style", "");
+        setTimeout(function() {
+            $("#alert"+info).fadeTo(1500, 0).slideUp(500, function(){
+                $(this).hide();
+            });
+        }, 1500);
+    }
+
+    function alertSuccess() {
+        _alert("Success")
+    }
+
+    function alertWarning() {
+        _alert("Warning")
+    }
+
+    function alertInfo(msg) {
+        _alert("Info", msg)
+    }
+    </script>
+</html>
